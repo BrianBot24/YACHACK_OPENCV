@@ -31,12 +31,13 @@ while(1):
     cv2.drawContours(frame,c,-1,(0,255,0),3)               #Draw the contour in Green
     cv2.circle(frame,(middleX,middleY), 10, (0,0,255), -1) #Draw the center circle of the image,RED
     
-    error=cx-middleX #
-    error1=error
-    kp=(100-vi)/middleX
+    error=cx-middleX    #X coordinate of the contour, minus X coordinate of the center.
+    error1=error        #
+    kp=(100-vi)/middleX #
     
-    vdr= vi-(kp)*error1
-    viz= vi+(kp)*error1
+    vdr= vi-(kp)*error1 #velocity MOTOR RIGHT
+    viz= vi+(kp)*error1 #velocity MOTOR LEFT
+    
     print(cx,cy)
     print(error)
     print(vdr)
