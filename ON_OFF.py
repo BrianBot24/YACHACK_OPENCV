@@ -11,7 +11,7 @@ while(1):
     
     ret0,frame =cam.read()                          #Start webcam capture
     imgray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) #Set gray balance range
-    ret1, thresh = cv2.threshold(imgray,100,255,cv2.THRESH_BINARY_INV)                #Set gray balance range, this converts the image to WHITE / BLACK
+    ret1, thresh = cv2.threshold(imgray,48,255,cv2.THRESH_BINARY_INV)                #Set gray balance range, this converts the image to WHITE / BLACK
     contorno, _ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[-2:] #Identify contour in black / white image
     
     vi=80                   #Initial velocity, 
