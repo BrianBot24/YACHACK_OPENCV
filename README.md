@@ -1,2 +1,2 @@
 # YACHACK_OPENCV
-Codigo en Python, para el funcionamiento de un robot 4WD o 2WD, utilizando OPENCV, en modo ON / OFF y PID
+Code in Python, for the operation of a 4WD or 2WD robot, using OPENCV, in Control P (kp) and Control PID
