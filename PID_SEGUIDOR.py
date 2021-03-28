@@ -1,44 +1,45 @@
+#MODULE for use of the PID Control
+#Necessary to use motor.py
 
-middleX= 360 # centro de la imagen (para el caso de mi camara es de 1240x720)
+from motor import *
 
-#VALORES INICIALES
+#INITIAL VALUES
 derivativo= 0
 proporcional= 0
-integral= 0
+integral = 0 
 PID_= 0
-lerror= 140         # Para fines practicos se le da un valor, se inicia con 0 en el codigo real
+lerror= 0 
 
-cX= 438              #valor de error(Se halla con el centro de la linea o centro de masa (contorno, _ = cv2.findContours)
+def PID(error,Kp,Ki,Kd,vi):
+    global derivativo
+    global proporcional
+    global integral
+    global PID_
+    global lerror
+    
+    proporcional= error
+    integral= integral + lerror
+    derivativo= error - lerror
 
-vi= 70               # velocidad MAX de los motores en linea recta, puede ser de 40 a 80
-Kp= (100-vi)/middleX # valor entre 0.096 a 0.032
-Kd= 0.0167           # valor para fin demostrativo, se tiene que calibrar en cada tipo robot
-Ki= 0.002            # valor para fin demostrativo, se tiene que calibrar en cada tipo robot
+    #if integral>1000:
+        #integral=1000
 
-error= cX - middleX  # error se halla entre el pixel central con el de la linea negra
+    #if integral<-1000:
+        #integral=-1000
 
-proporcional= error
-integral= integral + lerror
-derivativo= error - lerror
+    PID_= proporcional*Kp + integral*Ki + derivativo*Kd
+    lerror = proporcional
+    
+    mdr= vi - PID_ #Right motor speed.
+    miz= vi + PID_ #Left motor speed.
+    
+    avanzar(miz,mdr)
 
-#if integral>1000:
-    #integral=1000
-
-#if integral<-1000:
-    #integral=-1000
-
-PID_= proporcional*Kp + integral*Ki + derivativo*Kd
-
-mdr= vi - PID_ #Velocidad de motor derecho
-miz= vi + PID_ #Velocidad de motor izquierda
-
-lerror = proporcional
-
-print(proporcional)
-print(integral)
-print(derivativo)
-print(PID_)
-print(mdr)
-print(miz)
-print(mdr+miz)
+    #print(proporcional)
+    #print(integral)
+    #print(derivativo)
+    #print(PID_)
+    #print("motor derecha",mdr)
+    #print("motor izquierda",miz)
+    #print(mdr+miz)
 
