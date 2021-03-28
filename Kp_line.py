@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from motor import avanzar
 
 cam=cv2.VideoCapture(0) #Start webcam capture
 c = None                #
@@ -38,11 +39,13 @@ while(1):
     vdr= vi-(kp)*error1 #velocity MOTOR RIGHT
     viz= vi+(kp)*error1 #velocity MOTOR LEFT
     
-    print(cx,cy)
-    print(error)
-    print(vdr)
-    print(viz)
+    avanzar(viz,vdr)
     
-    cv2.imshow('camera1',frame) #See color image
+    #print(cx,cy)
+    #print(error)
+    #print(vdr)
+    #print(viz)
+    
+    #cv2.imshow('camera1',frame) #See color image
     #cv2.imshow('camera2',thresh)#See black / white image
     key=cv2.waitKey(1) & 0xFF
