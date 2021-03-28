@@ -14,4 +14,9 @@ _sudo rmmod uvcvideo_
 
 _sudo modprobe uvcvideo quirks=2_
 
-## (add imagen terminal RPi)
+## _(add imagen terminal RPi)_
+
+### HOW THE CONTROL PID WORKS
+
+The algorithm was conducted similar to that of a follower line with sensors IR.
+
