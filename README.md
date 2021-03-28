@@ -41,3 +41,7 @@ error = 466-620
 error = -154
 
 Execute PID TEST, replacing the values of cx and middleX [PID TEST](https://github.com/BrianBot24/YACHACK_OPENCV/blob/main/PID_TEST.py)
+
+LEFT MOTOR SPEED  = 57.91
+
+RIGTH MOTOR SPEED = 82.08
