@@ -34,12 +34,12 @@ while(1):
     
     error=cx-middleX    #X coordinate of the contour, minus X coordinate of the center.
     error1=error        #
-    kp=(100-vi)/middleX #
+    kp=(100-vi)/middleX # Only use Proportional Control (Kp)
     
     vdr= vi-(kp)*error1 #velocity MOTOR RIGHT
     viz= vi+(kp)*error1 #velocity MOTOR LEFT
     
-    avanzar(viz,vdr)
+    avanzar(viz,vdr) # Use Module motor.py
     
     #print(cx,cy)
     #print(error)
