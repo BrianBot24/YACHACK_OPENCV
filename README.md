@@ -6,7 +6,7 @@ Code in Python, for the operation of a 4WD or 2WD robot, using OPENCV, in Contro
 
 ### INSTALL WEBCAM
 Visit Link:
-https://www.raspberrypi.org/documentation/usage/webcams/}
+https://www.raspberrypi.org/documentation/usage/webcams/
 
 ### INSTALL WEBCAM UVC
 Execute in Terminal:
