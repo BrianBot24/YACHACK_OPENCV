@@ -14,6 +14,8 @@ _sudo rmmod uvcvideo_
 
 _sudo modprobe uvcvideo quirks=2_
 
+![Alt text](//tree/main/doc/terminal.png?raw=true "Terminal RPi")
+
 ## _(add imagen terminal RPi)_
 
 ### HOW THE CONTROL PID WORKS
