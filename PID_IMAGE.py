@@ -34,16 +34,18 @@ def PID(error,Kp,Ki,Kd,vi):
     miz= vi + PID_ #Left motor speed.
     
     if  mdr>100:
-        mdr=100
-    
-    if mdr<0:
+        mdr=100    
+    elif mdr<0:
         mdr=0
-    
+    else:
+        mdr=mdr
+        
     if  miz>100:
-        miz=100
-    
-    if miz<0:
-        mdr=0
+        miz=100    
+    elif miz<0:
+        miz=0
+    else:
+        miz=miz
     
     avanzar(miz,mdr)
 
