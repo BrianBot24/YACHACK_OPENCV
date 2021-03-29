@@ -30,8 +30,8 @@ def PID(error,Kp,Ki,Kd,vi):
     PID_= proporcional*Kp + integral*Ki + derivativo*Kd
     lerror = proporcional
     
-    mdr= vi - PID_ #Right motor speed.
-    miz= vi + PID_ #Left motor speed.
+    mdr= vi + PID_ #Right motor speed.
+    miz= vi - PID_ #Left motor speed.
     
     if  mdr>100:
         mdr=100    
